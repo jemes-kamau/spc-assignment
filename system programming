@@ -1,0 +1,106 @@
+question 1
+#include<stdio>
+int main()
+char employee_name[100];
+flaot hours_wprked,rate_per_hour,basic_pay,tax,net_pay;
+//prompt tha user to enter the details
+print("enter the employee name:");
+scanf("%s",employee_name);
+printf("enter hours worked:");
+scanf("%f",&hours_worked);
+printf("enter rate per hour:")
+scanf("%f",&rate_per_hour);
+//calculate the basic pay
+basic_pay=hours_worked*rate_per_hour;
+//calculate tax based on basic pay
+if(basic_pay>70000){
+tax=0.25*basic_pay;
+}else if(basic_pay>=15000&basic_pay<=70000){
+tax=0.15*basic_pay;
+}else{
+tax=0
+}
+//display the net tax after pay
+net_pay=basic_pay-tax;
+printf("employee name:%s\n",employee_name);
+print("basic pay:%2f\n",basic_pay);
+printf("tax:%2f\n",tax);
+printf("net pay:%2f\n",net_pay);
+retun 0;
+}
+
+
+
+
+
+question 2
+#include <stdio.h>//include standard input output library
+#include<stdlib.h>//include standard library for exit
+#include<fctl.h>//include file control option library
+#include<unistd.h>//inlude POSIX operating system AIP library
+int main(){
+int file_descriptor//declare variables to hold the file descriptor
+//open file name "code.txt"
+file_desriptor=open("code.txt"O_WRONGRY|O_CREAT|O_TRANC:0644);
+//chack if the file open succesfully
+if(file_desriptor==-1){
+perror("error open file");
+exit(EXIT_FAILURE)//exit the program with failer status
+}
+//write a "Hello world"to the file
+if(write(file_descriptor,"Hello world",11)==-1){
+perrior("error writting to file");
+close(file_descriptor);//clasing the file before exiting
+exit(EXIT_FAILIRE);
+//close the file
+close(file_descriptor);
+//reopen file reading only
+file_descriptor=open("code.txt",O_RDONLY);
+check if the file reopen successfully
+if(file_descriptor==-1){
+perrio("open fole for reading");
+exit(EXIT_FAILIRE);
+}
+char buffer[12]//declare buffer to hold the reading
+//read the content of the file into the buffer
+if(read(file_descriptor,11)==-1){
+perror("error reading from the file");
+close(file_descriptor);
+exit(EXIT_FAILIRE);
+}
+//close tje file
+close(file_descriptor);
+//terminate the buffer to terat it as string
+buffer[11]='\0';
+//print the reading content
+print("read from file:%s\n",buffer);
+return 0;
+}
+
+
+
+
+queston 3
+#!/bin/bash
+#promp user for customerID,customername and unitconsumed
+read-p"enter customer ID"customerid
+read-p"enter customer Name"customername
+read-p"enter unit Consumed"unitconsumed
+#calculate bill based on units consumed
+if[$unutsConsumed-it 200]then
+chargesperunit=120
+elif[$unitsConsumed-ge 200]&&[$unitsConsumed-it 400]then
+chargesperunit=150
+elif[$unitsConsume-eg 400]&&[unitsConsumed-it 600]the
+chargesperunit=180
+else
+chargesperunit=200
+fi
+#calculate the total bill
+totalbill=$((unutsConsumed*chargesperunit))
+#display bill information
+echo"customer ID:$customerid"
+echo"customer Name:$customername"
+echo"units Consumed:$unitsconsumed"
+echo"charges per unut:$chargesperunit"
+echo"Total Bill:$totalbill"
